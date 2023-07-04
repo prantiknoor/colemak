@@ -1,4 +1,4 @@
-## Download and activate Prantik's Colemak loyout
+## Download and activate Prantik's Colemak layout
 
 > Run this command on **Powershell** on your windows machine to install.
 
