@@ -17,8 +17,18 @@ p::(
 *]::{
     if GetKeyState("Alt")
         Send "{End}"
+    else if GetKeyState("Ctrl")
+        Send "^{Right}"
     else
         Send "{Right}"
+}
+*+]::{
+    if GetKeyState("Alt")
+        Send "+{End}"
+    else if GetKeyState("Ctrl")
+        Send "^+{Right}"
+    else
+        Send "+{Right}"
 }
 
 ;   a  s  d  f  g  h  j  k  l  ;  '
@@ -48,9 +58,7 @@ RCtrl::RAlt
 ; CapsLock ⇄ Esc
 Esc::CapsLock
 CapsLock::{
-    if GetKeyState("Shift")
-        Send "{CapsLock}"
-    else if GetKeyState("Ctrl")
+    if GetKeyState("Ctrl")
         Send "^{BackSpace}"
     else
         Send "{Esc}"
