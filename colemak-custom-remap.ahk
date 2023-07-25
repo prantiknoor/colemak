@@ -4,8 +4,10 @@
 +Esc::Suspend
 #SuspendExempt False
 
+^Esc::ExitApp
+
 ;   q  w  e  r  t  y  u  i  o  p  [  ]  \
-;=> q  w  f  p  g  j  l  u  y  (  [  →  \
+;=> q  w  f  p  g  j  l  u  y  (  [  ]  \
 e::f
 r::p
 t::g
@@ -14,22 +16,6 @@ u::l
 i::u
 o::y
 p::(
-*]::{
-    if GetKeyState("Alt")
-        Send "{End}"
-    else if GetKeyState("Ctrl")
-        Send "^{Right}"
-    else
-        Send "{Right}"
-}
-*+]::{
-    if GetKeyState("Alt")
-        Send "+{End}"
-    else if GetKeyState("Ctrl")
-        Send "^+{Right}"
-    else
-        Send "+{Right}"
-}
 
 ;   a  s  d  f  g  h  j  k  l  ;  '
 ;=> a  r  s  t  d  h  n  e  i  o  '
@@ -64,12 +50,11 @@ CapsLock::{
         Send "{Esc}"
 }
 
-; ( → ;   : → _    > → :    _ → }
+; ( → ; 
 +9::;
-+p::_
-+.:::
-+-::}
++p:::
 
 ; Alt + . → >   Alt + [ → ]
-!.::Send ">"
-![::Send "]"
+!.::Send "{End}"
+!,::Send "{Home}"
+!'::Send "{Right}"
